@@ -10,17 +10,42 @@ public class Mastermind
 	//How will human addd a four digit color band?
 	public void populateBoard()
 	{
+		board.add(new ArrayList<String>());
+		Scanner scan = new Scanner(System.in);
+		System.out.print("What color do you want?");
+		for(int i=0; i<4; i++)
+		{
+			String x = scan.nextLine();
+			board.get(0).add(x);
+		}
+		board.add(new ArrayList<String>());
+		for(int i=0; i<4; i++)
+		{
+			String y = scan.nextLine();
+			board.get(1).add(y);
+		}
+		board.add(new ArrayList<String>());
+		for(int i=0; i<4; i++)
+		{
+			String n = scan.nextLine();
+			board.get(2).add(n);
+		}
+		board.add(new ArrayList<String>());
+		for(int i=0; i<4; i++)
+		{
+			String p = scan.nextLine();
+			board.get(3).add(p);
+		}
+		board.add(new ArrayList<String>());
+		for(int i=0; i<4; i++)
+		{
+			String o = scan.nextLine();
+			board.get(4).add(o);
+		}
+
 		
-		board.add(new ArrayList<String>());
-		board.get(0).add("R, G, B, Y, b, w, o, o");
-		board.add(new ArrayList<String>());
-		board.get(1).add("R, G, B, Y, b, w, o, o");
-		board.add(new ArrayList<String>());
-		board.get(2).add("R, G, B, Y, b, w, o, o");
-		board.add(new ArrayList<String>());
-		board.get(3).add("R, G, B, Y, b, w, o, o");
-		board.add(new ArrayList<String>());
-		board.get(4).add("R, G, B, Y, b, w, o, o");
+		
+	
 		
 		
 	
@@ -28,10 +53,9 @@ public class Mastermind
 	}
 	public void printBoard()
 	{
-		for(int i=0; i<board.length(); i++)
+		for(int i=0; i<board.size(); i++)
 		{
 			System.out.println(board.get(i));
 		}
 	}
 }
-	
