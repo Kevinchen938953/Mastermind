@@ -8,41 +8,43 @@ public class Mastermind
 	//2d array list
 	ArrayList<ArrayList<String>>board = new ArrayList<ArrayList<String>>();
 	//How will human addd a four digit color band?
+	int[] answers = new int[6];
+	int[] userinputs = new int[6];
 	public void populateBoard()
 	{
-		board.add(new ArrayList<String>());
-		Scanner scan = new Scanner(System.in);
-		System.out.print("What color do you want?");
-		for(int i=0; i<4; i++)
+		//Colors are red, green, blue, yellow, cyan and purple
+		//number 1 equals red, 2 equals green, 3 equals blue, four equals yellow five equals cyan six equals purple
+		for(int i=0; i<6; i++)
 		{
-			String x = scan.nextLine();
-			board.get(0).add(x);
+			int numguess = (int)(Math.random()*5)+1;
+			answers[i] = numguess;
 		}
-		board.add(new ArrayList<String>());
-		for(int i=0; i<4; i++)
+		for( int x=0; x<6; x++)
 		{
-			String y = scan.nextLine();
-			board.get(1).add(y);
-		}
-		board.add(new ArrayList<String>());
-		for(int i=0; i<4; i++)
+			Scanner scan = new Scanner(System.in);
+			do{
+				System.out.println("Enter your nummber 1 through 6");
+		        int picknum = scan.nextInt();
+		      }while(picknum<1 || picknum>5);
+		      userinputs[x]=picknum;
+		for(int n=0; n<6; n++)
 		{
-			String n = scan.nextLine();
-			board.get(2).add(n);
+			for(int b=0; b<6; b++)
+			{
+				if(userinputs[b]==answers[i])
+				{
+					System.out.println("This value is in right position");
+				}
+				else if(userinputs[b]!=answers[i])
+				{
+					System.out.println("This is in wrong position");
+				}
+		     }
 		}
-		board.add(new ArrayList<String>());
-		for(int i=0; i<4; i++)
-		{
-			String p = scan.nextLine();
-			board.get(3).add(p);
+		    
+		
 		}
-		board.add(new ArrayList<String>());
-		for(int i=0; i<4; i++)
-		{
-			String o = scan.nextLine();
-			board.get(4).add(o);
-		}
-
+			
 		
 		
 	
