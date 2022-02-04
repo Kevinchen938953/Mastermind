@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
+//Created by Kevin Chen
+//Mastermind Games with Integers
+//Latest Update on Feb 3 2022.
+
+
 
 public class Mastermind
 {
@@ -14,6 +19,10 @@ public class Mastermind
 	/*Number version of mastermind. 
 	answers array is populated with random numbers from 1 to 6
 	userinputs array is populated by user inputs: values are from 1 to 6
+	*/
+	
+	/*
+	- userinterface method prints out instructions for the player
 	*/
 	public void userinterface()
 	{
@@ -29,6 +38,11 @@ public class Mastermind
 		System.out.println("\n");
 		System.out.println("You have six attempts to guess the correct order. If you do, then you win");
 	}
+	/*
+	Method populate board populates the answers array with four randomly generated numbers from one to four. Each number represents a distinct color
+	Nested for loops are used to check overlaps within the answers array
+	*/
+	
 	
 	public void populateBoard()
 	{
@@ -46,6 +60,10 @@ public class Mastermind
 			}
 		}
 	}
+	/*
+	populateUser method is used to ask for user input. Still needs to check overlap. User inputs numbers one to six and the array userinputs is filled with these values
+	*/
+	
 	public void populateUser()
 	{
 	
@@ -64,6 +82,11 @@ public class Mastermind
 		}
 	}
 		
+	
+	/* 
+	Checkboards method determines to place a Red Pin or White Pin depending if the userinputs array contains the same integer as the answers array either in the right or wrong psition
+	Also determines when player wins and when player loses. 
+	*/
 		
 		    
 		
