@@ -36,14 +36,33 @@ public class Mastermind
 	{
 		for(int i=0; i<6; i++)
 		{
+			
+			
 			board.add(new ArrayList<String>());
-			board.get(n).add("_, _, _, _,");
+			board.get(i).add("_, _, _, _,");
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Enter a char for a color r, g, b, y,p, or v");
+			String letter = scan.nextLine();
+			board.get(i).set(i, letter);
+			
+			
 			
 			
 		}
+	}
+
+	public void printBoard()
+	{
+		for(int x=0; x<6; x++)
+		{
+			System.out.println(board.get(x));
+		}
+	}
+	
+  }
 		//Colors are red, green, blue, yellow, cyan and purple
 		//number 1 equals red, 2 equals green, 3 equals blue, four equals yellow five equals cyan six equals purple
-		for(int z=0; z<answers.length; z++)
+		/*for(int z=0; z<answers.length; z++)
 		{
 			for(int i=z+1; i<answers.length; i++)
 			{
@@ -119,4 +138,5 @@ public class Mastermind
 	 		
 	
 }
+*/
 
