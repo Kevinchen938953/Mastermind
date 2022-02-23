@@ -6,6 +6,10 @@ public class Mastermind
 {
 	ArrayList<String> test = new ArrayList<String>();
 	ArrayList<ArrayList<String>>board = new ArrayList<ArrayList<String>>();
+	String secret = "RGBWY";
+	Scanner scan = new Scanner(System.in);
+	String guess;
+	String gGuess;
 	
 	//2d array list
 	
@@ -31,28 +35,57 @@ public class Mastermind
 		System.out.println("\n");
 		System.out.println("You have six attempts to guess the correct order. If you do, then you win");
 	}
+	//User interface. Gives them instructions for game
 	
 	public void populateBoard()
 	{
 		for(int i=0; i<6; i++)
 		{
 			
-			
-			board.add(new ArrayList<String>());
-			board.get(i).add("_, _, _, _,");
-			Scanner scan = new Scanner(System.in);
+			guess = scan.nextLine();
 			System.out.println("Enter a char for a color r, g, b, y,p, or v");
-			String letter = scan.nextLine();
-			board.get(i).set(i, letter);
+			board.add(new ArrayList<String>());
+			board.get(i).add(guess);
+			
+			//Populates board arraylist with strings called guess
+			
 			
 			
 			
 			
 		}
 	}
+	public void checkBoard()
+	{//Go through each turn and determine if the guess string contains the right character in the right position or contains the same character in the wrong position
+		
+	  for(int n=0; n<board.size(); n++)
+	  {
+		for(int i =0; i<guess.length(); i++)
+		{
+			for(int x=0; x<guess.length(); x++)
+			{
+				if(secret.substring(i,i+1).equals(guess.substring(x,x+1)
+				{
+					if(i==x)
+					{
+					System.out.print("R");//Red means right position right char
+				    }
+				    else
+				    {
+						System.out.print("W");//White means answer string contains a char from guess
+					}
+				}
+			}
+		}
+	   }
+	}
+					
+	
+			
+		
 
 	public void printBoard()
-	{
+	{//Prints board
 		for(int x=0; x<6; x++)
 		{
 			System.out.println(board.get(x));
